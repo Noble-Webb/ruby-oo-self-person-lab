@@ -1,7 +1,7 @@
-class Person
+class Person #Person class 
     attr_accessor :bank_account
     attr_reader :name, :happiness, :hygiene
-    def initialize(name)
+    def initialize(name) #each instance has the ability to 
       @name = name
       @bank_account = 25
       @happiness = 8
@@ -51,5 +51,23 @@ class Person
       self.happiness += 2
       self.hygiene -= 3
       return "♪ another one bites the dust ♫"
+    end
+    def call_friend(friend) 
+      self.happiness += 3
+      friend.happiness += 3
+      return "Hi #{friend.name}! It's #{self.name}. How are you?"
+    end
+    def start_conversation(callee, topic)
+      if topic == "politics"
+        callee.happiness -= 2
+        self.happiness -=  2
+        return "blah blah partisan blah lobbyist"
+      elsif topic == "weather"
+        callee.happiness += 1
+        self.happiness += 1
+        return "blah blah sun blah rain"
+      elsif topic == topic
+        return "blah blah blah blah blah"
+      end  
     end
   end
